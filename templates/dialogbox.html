@@ -1,0 +1,20 @@
+<md-dialog aria-lable="Mobile">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{data.name}}</h2>
+<span flex></span>
+<md-button class="md-icon-button" ng-click="cancel()">
+ <i class="material-icons">close </i>
+ </md-button>
+      </div>
+
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+          <image style="margin:auto; max-width:50%;max-height:150%" align-self:"center" ng-src={{data.image.large}}  >
+        <p>{{data.description}}</p>
+
+      </div>
+</md-dialog-content>
+
+    </md-dialog>

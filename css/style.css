@@ -1,0 +1,12 @@
+#btncolor {
+     background-color: #4CAF50;
+     color: white;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+}
+#sideBar {
+  position:fixed;
+  margin-top:94px;
+  width : 15%;
+}

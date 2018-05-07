@@ -1,0 +1,17 @@
+<div layout="row" layout-wrap layout-align="center center">
+
+  <md-card ng-repeat="x in jsonData | myFilter: arraymanufacturer : arraystorage :arrayos: arraycamera">
+
+      <md-card-content layout="column" layout-align="center center" >
+        <img  style="height:350px;width:300px" ng-src={{x.image.small}}  class="md-card-image">
+<div class="md-toolbar-tools usableTool" layout-align="center center">{{" "+x.name}}</div>
+{{"price: " +x.price}}<br>
+{{"Manufacturer:" +x.specs.manufacturer}} <br>
+{{"Storage: " +x.specs.storage}} <br>
+{{"Os: " +x.specs.os}} <br>
+{{"Camera: " +x.specs.camera}} <br>
+<md-button class="md-primary md-raised" ng-click="showAdvanced($event,x)">Buy</md-button>
+
+</md-card-content>
+</md-card>
+</div>

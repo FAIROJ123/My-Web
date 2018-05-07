@@ -1,0 +1,37 @@
+<md-sidenav style="position:fixed;margin-top:63px;" md-component-id="left" class="sideBar">
+               <md-content layout-margin class="sideBarContent">
+                 <fieldset class="standard">
+               <legend>Manufacturer</legend>
+                   <div ng-repeat="x in jsonData |uniqueFilter:'manufacturer'">
+
+                     <md-checkbox ng-click="toggleFunction('manufacturer',x.specs.manufacturer)">
+                       {{x.specs.manufacturer}}
+                     </md-checkbox>
+                   </fieldset>
+                   <fieldset class="standard">
+                     <legend>Storage</legend>
+                     <div ng-repeat="x in jsonData | uniqueFilter:'storage'">
+
+                       <md-checkbox ng-click="toggleFunction('storage',x.specs.storage)">
+                         {{x.specs.storage}}
+                       </md-checkbox>
+                        </fieldset>
+                        <fieldset class="standard">
+                      <legend>Os</legend>
+                       <div ng-repeat="x in jsonData | uniqueFilter:'os'">
+
+                         <md-checkbox ng-click="toggleFunction('os',x.specs.os)">
+                           {{x.specs.os}}
+                         </md-checkbox>
+                         </fieldset>
+                         <fieldset class="standard">
+                        <legend>Camera </legend>
+                         <div ng-repeat="x in jsonData | uniqueFilter:'camera'">
+
+                           <md-checkbox ng-click="toggleFunction('camera',x.specs.camera)">
+                             {{x.specs.camera}}
+                           </md-checkbox>
+                            </fieldset>
+
+</md-content>
+</md-sidenav>
