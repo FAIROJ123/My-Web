@@ -1,22 +1,19 @@
 app.controller('loginController', function($scope,$state) {
 
-var emailPattern=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-var passwordPattern=/^[a-z,0-9]+$/;
-var email=document.getElementById("email");
-var password=document.getElementById("password");
+$scope.login=function(){
+  var email=$scope.email;
+  var password=$scope.password;
 
-
-  $scope.login=function(){
-
-
-    if(email.value.match(emailPattern) && password.value.match(passwordPattern))
-    {
-
-       $state.go('home.dashboard');
-    }
-    else{
-      document.getElementById("error").innerHTML="<span class='errorMessage'>Enter Correct Username/Password</span>";
-    }
+  if(email== $scope.email && password==$scope.password)
+  {
+    $state.go('home.dashboard');
   }
-  
-});
+  else{
+    $scope.error = "Incorrect username/password !";
+
+  }
+
+}
+
+
+ });

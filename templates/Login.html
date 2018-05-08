@@ -1,30 +1,29 @@
 <div layout="row" layout-padding layout-wrap layout-margin layout-align="space-around">
   <div md-whiteframe="5"   flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="column"
     layout-align="center center" style="margin-top:10%">
-       <h1>Login</h1>
-       <form name="userForm">
-         <md-input-container style="width: 100%" >
-           <label>Email Id:</label>
-           <input type="text" name='email' ng-model="email" id="email" ng-pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" ng-required='true'>
-           <div ng-messages="userForm.email.$error" role="alert" >
-          <div ng-message-exp="['required', 'pattern']" ng-show='userForm.email.$invalid && userForm.email.$touched'>
-            please enter your email.
-          </div>
-        </div>
-        </md-input-container>
-        <md-input-container style="width: 100%">
-          <label>Password:</label>
-          <input type="password" name='password' ng-model="password" id="password" ng-required='true' md-maxlength="16"/ >
-          <div ng-messages="userForm.password.$error" role="alert" multiple="">
-                <div ng-message="required" class="my-message" ng-show='userForm.password.$invalid && userForm.password.$touched'>Please enter your password.</div>
+       <h1 id="form">Login</h1>
+       
+       <form name="userForm" id="login">
 
-              </div>
-        </md-input-container>
-        <md-input-container style="width: 100%">
-          <input aria-label="Login" type="submit" value="Login" id="btncolor" ng-disabled="userForm.$invalid" ng-click="login()" >
-        </md-input-container>
-      </form>
-        <div id="error"> </div>
+        <md-input-container   id="ff"  >
+        <label>Email Id:</label>
+        <input type="text" name="email" ng-model="email" ng-pattern="/^\w[^_]+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required>
+        <div ng-messages="userForm.email.$error"  >
+        <div ng-message="required">emailid required </div>
+      </div>
 
+      </md-input-container>
+      <md-input-container   id="ff" >
+            <label>Password:</label>
+            <input type="password" name='password' ng-model="password" required>
+            <div ng-messages="userForm.password.$error">
+       <div ng-message="required">password required</div>
+     </div>
+         </md-input-container>
+
+         <md-input-container   id="ff"  >
+      <input  type="submit" value="Login" id="btncolor" ng-disabled="userForm.$invalid"  ng-click="login()" >
+     </md-input-container>
+        </form>
     </div>
 </div>
