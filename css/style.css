@@ -13,7 +13,7 @@
 #login{
   background-color: lightblue;
   width: 300px;
-  border: 25px solid green;
+  border: 25px solid grey;
   padding: 25px;
   margin: 25px;
 }
@@ -22,6 +22,44 @@
   color:pink;
 
 }
-#ff{
+#mylogin{
 width: 100%;
+}
+#myform
+{
+
+  background-color: lightblue;
+  width: 300px;
+  border: 25px solid grey;
+  padding: 15px;
+  margin: 35px;
+  width: 100%;
+
+}
+.label {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+
+.in-place-edit {
+
+  white-space: pre-wrap;
+}
+
+
+.in-place-edit{
+  display: inline-block;
+  background: #F0F0FF;
+  padding: 5px;
+}
+
+
+.results {
+  margin-top: 20px;
+}
+
+.value-data {
+  white-space: pre-wrap;
 }

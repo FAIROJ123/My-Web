@@ -1,4 +1,5 @@
 var app=angular.module('routerApp',['ngMaterial','ui.router','ngMessages']);
+
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('login',{
@@ -11,6 +12,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
            templateUrl: 'templates/home.html',
            controller :'homeController'
 
+  })
+  .state('home.todo',{
+    url: '/todo',
+    templateUrl: 'templates/description.html',
+    controller : 'todoController'
   })
   .state('home.dashboard',{
            url: '/dashboard',

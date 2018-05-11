@@ -8,6 +8,9 @@ app.controller('homeController', function($scope,$mdSidenav,readJson,$http,$stat
 $scope.Logout=function(){
   $state.go('login');
 }
+$scope.ToDo=function(){
+  $state.go('home.todo');
+}
 
 var manufacturer=[];
 var storage=[];
@@ -50,27 +53,25 @@ $scope.arraycamera=camera;
 });
 
 var selectData=function (array,item) {
+  console.log("array item",array,"item",item);
         var  index = array.indexOf(item);
         if (index> -1) {
           array.splice(index, 1);
         }
         else {
           array.push(item);
+          console.log(array);
         }
       }
 
 var GenericArray=function(array,expression,x){
   var filteredArray=[];
-  for(var i=0;i<x.length;i++)
-  {
+  for(var i=0;i<x.length;i++){
     var item2=x[i];
-
   for(var j=0;j<array.length;j++){
     var item=array[j];
-
   if(item2.specs[expression]==item){
     filteredArray.push(item2);
-
   }
 }
 
@@ -80,11 +81,8 @@ return filteredArray;
 
 app.filter("myFilter",function(){
   return function(x,arraymanufacturer,arraystorage,arrayos,arraycamera){
-
-
   var filteredArray=[];
   var temp=[];
-  console.log(arraymanufacturer);
   if(x!=undefined){
 
       if(arraymanufacturer.length>0 ||arraystorage.length>0||arrayos.lemgth>0||arraycamera.length>0)
@@ -95,10 +93,10 @@ app.filter("myFilter",function(){
       if(filteredArray.length>0){
         temp=filteredArray;
         filteredArray=[];
-
       }
       else{
         temp=x;
+
       }
 
     if(arraystorage.length>0){
@@ -124,6 +122,7 @@ app.filter("myFilter",function(){
     }
 
     if(arraycamera.length>0){
+
       for(var i=0;i<temp.length;i++){
         var newitem=temp[i];
         filteredArray=GenericArray(arraycamera,'camera',temp);
