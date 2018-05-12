@@ -1,4 +1,4 @@
-var app=angular.module('routerApp',['ngMaterial','ui.router','ngMessages']);
+var app=angular.module('routerApp',['ngMaterial','ui.router','ngMessages','ngSanitize']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

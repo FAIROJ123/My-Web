@@ -3,9 +3,9 @@
 <div md-whiteframe="5"   flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="column"
     layout-align="center center" style="margin-top:15%">
 <h2>ToDo</h2>
-  <form   name='frm' id="myform"  >
+  <form   name='frm' id="myform" >
     <div class="label">Title:</div>
-    <div id='div1' contenteditable="true" class="in-place-edit"  ng-model="title"></div>
+    <div id='div1' contenteditable="true" ng-bind-html="title" class="in-place-edit"  ng-model="title"></div>
 
       <div class="results">
         <hr/>
@@ -18,13 +18,13 @@
   </div>
   </form>
 
- <div flex-xs flex-gt-xs="20" layout="row" >
+ <div   flex-xs flex-gt-xs="20" layout="row" >
 
     <md-card  ng-repeat="todo in todos"  md-whiteframe="20" layout-align="center center"  flex-sm="20" flex-gt-sm="20" flex-gt-md="35">
            <md-card-content  >
 
-            <p  class="value-data" ng-show="myvalue">{{todo.title}}</p>
-           <br class="value-data">{{todo.description}}</br>
+            <div  class="value-data" ng-show="myvalue" ng-bind-html="todo.title" ng-cloak></div>
+           <div  class="value-data" ng-bind-html="todo.description"></div>
          </md-card-content>
       </md-card>
 
